@@ -1,5 +1,6 @@
 package com.semah.book.network.user;
 
+import com.semah.book.network.role.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -13,6 +14,9 @@ import java.security.Principal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.List;
+
+import static jakarta.persistence.FetchType.EAGER;
 
 @Getter
 @Setter
@@ -34,6 +38,9 @@ public class User implements UserDetails, Principal {
     private String password;
     private boolean accountLocked;
     private boolean enabled;
+    @ManyToMany(fetch = EAGER)
+    private List<Role> roles;
+
 
 
 
