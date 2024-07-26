@@ -17,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-
+//those are my last modifications for this project rn
 @EntityListeners(AuditingEntityListener.class)
 public class Role {
     @Id
